@@ -1,0 +1,80 @@
+* {
+    font-family: "New Rocker", sans-serif;  
+  }
+  
+  #drumset {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .drum {
+    width: 20vmin;
+    height: 20vmin;
+    background: #ccc;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 1vmin solid #333;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 5vmin;
+  }
+  
+  #drum-0 {
+    box-shadow: inset 0 0 0 2vmin blue;
+    top: -5vmin;
+  }
+  
+  #drum-1 {
+    box-shadow: inset 0 0 0 2vmin green;
+  }
+  
+  #drum-2 {
+    box-shadow: inset 0 0 0 2vmin red;
+  }
+  
+  #drum-3 {
+    box-shadow: inset 0 0 0 2vmin yellow;
+    top: -5vmin;
+  }
+  
+  #drumset.drum-0 #drum-0 { background: #00f8; }
+  #drumset.drum-1 #drum-1 { background: #0f08; }
+  #drumset.drum-2 #drum-2 { background: #f008; }
+  #drumset.drum-3 #drum-3 { background: #ff08; }
+  
+  #points, #streak, #booster {
+    position: absolute;
+    top: 5vmin;
+    right: 5vmin;
+    font-size: 18vmin;
+    color: #fff;
+    text-shadow: 0 -1px #000, 1px -1px #000, 1px 0 #000, 1px 1px #000, 0 1px #000, -1px 1px  #000, -1px 0 #000, -1px -1px #000;
+  }
+  
+  #booster {
+    top: 22vmin;
+    font-size: 7vmin;
+  }
+  
+  #streak {
+    top: 30vmin;
+    right: 50vw;
+    transform: translate(50%, 0);
+    text-align: center;
+    font-size: 12vmin;
+  }
+  
+  #streak:not(:empty)::before {
+    content: "Streak: ";
+  }
+  
+  #video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
