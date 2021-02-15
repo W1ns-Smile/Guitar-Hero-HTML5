@@ -30,17 +30,20 @@ function buttonPressed(id) {
   window.addEventListener("keydown", function(event) {
     if (event.code == "KeyZ") {
       buttonPressed(2);
+      window.requestAnimationFrame(readValue);
     }
     if (event.code == "KeyX") {
       buttonPressed(3);
+      window.requestAnimationFrame(readValue);
     }
     if (event.code == "KeyM") {
       buttonPressed(0);
+      window.requestAnimationFrame(readValue);
     }
     if (event.code == "Comma") {
       buttonPressed(1);
-    }
       window.requestAnimationFrame(readValue);
+    }
   });
   /*const connectedGamepads = navigator.getGamepads();
   const gamepadIndexes = Object.keys(gamepads);
@@ -66,14 +69,35 @@ function buttonPressed(id) {
   }
 }*/
 
-window.addEventListener("DOMContentLoaded", function(e) {
-  //console.log("Gamepad connected!");
-  //gamepads[e.gamepad.index] = true;
+/*window.addEventListener("DOMContentLoaded", function(e) {
+  console.log("Gamepad connected!");
+  gamepads[e.gamepad.index] = true;
   generateRandomActive();
-  //readValue();
-});
+  readValue();
+});*/
 
 /*window.addEventListener("gamepaddisconnected", function(e) {
   console.log("Gamepad disconnected!");
   delete gamepads[e.gamepad.index];
 });*/
+
+var playerVideoHead;
+function onYouTubeIframeAPIReady() {
+    playerVideoHead = new YT.Player('video', {
+        events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}
+
+togglePlayer(playerVideoHead);
+
+function togglePlayer(player) {
+    if (typeof player.getPlayerState == "undefined") return;
+    var state = player.getPlayerState();
+
+    if (state == YT.PlayerState.PLAYING) {
+      generateRandomActive();
+    }
+}
