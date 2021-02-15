@@ -81,23 +81,22 @@ function buttonPressed(id) {
   delete gamepads[e.gamepad.index];
 });*/
 
-var playerVideoHead;
+var player;
 function onYouTubeIframeAPIReady() {
-    playerVideoHead = new YT.Player('video', {
-        events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-        }
+    player = new YT.Player('video', {
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
     });
 }
 
-togglePlayer(playerVideoHead);
+function onPlayerReady(event) {
+  event.target.playVideo();
+}
 
-function togglePlayer(player) {
-    if (typeof player.getPlayerState == "undefined") return;
-    var state = player.getPlayerState();
-
-    if (state == YT.PlayerState.PLAYING) {
-      generateRandomActive();
-    }
+function onPlayerStateChange(event) {
+  if (event.data == YT.PlayerState.PLAYING) {
+    generateRandomActive();
+  }
 }
