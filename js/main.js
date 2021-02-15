@@ -27,7 +27,7 @@ function buttonPressed(id) {
 }
 
 function readValue() {
-  window.addEventListener("keydown", function(event) {
+  /*window.addEventListener("keydown", function(event) {
     if (event.defaultPrevented) {
       return; // Do nothing if event already handled
     }
@@ -56,11 +56,10 @@ function readValue() {
     }
   
     refresh();
-  
-    // Consume the event so it doesn't get handled twice
+
     event.preventDefault();
-  }, true);
-  /*const connectedGamepads = navigator.getGamepads();
+  }, true);*/
+  const connectedGamepads = navigator.getGamepads();
   const gamepadIndexes = Object.keys(gamepads);
   
   for (let x = 0; x < gamepadIndexes.length; x++) {
@@ -75,9 +74,9 @@ function readValue() {
         delete buttonState[y];
       }
     }
-  }*/
+  }
   
-  if ("keydown") {
+  if (gamepadIndexes.length > 0) {
     window.requestAnimationFrame(readValue);
   }
 }
