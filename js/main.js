@@ -82,14 +82,14 @@ function readValue() {
   }
 }
 
-/*window.addEventListener("gamepadconnected", function(e) {
-  console.log("Gamepad connected!");
-  gamepads[e.gamepad.index] = true;
+window.addEventListener("DOMContentLoaded", function(e) {
+  //console.log("Gamepad connected!");
+  //gamepads[e.gamepad.index] = true;
   generateRandomActive();
   readValue();
 });
 
-window.addEventListener("gamepaddisconnected", function(e) {
+/*window.addEventListener("gamepaddisconnected", function(e) {
   console.log("Gamepad disconnected!");
   delete gamepads[e.gamepad.index];
 });*/
