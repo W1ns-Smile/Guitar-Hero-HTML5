@@ -26,7 +26,7 @@ function buttonPressed(id) {
   document.querySelector("#booster").textContent = `x${booster}`;
 }
 
-function readValue() {
+//function readValue() {
   window.addEventListener("keydown", function(event) {
     if (event.defaultPrevented) {
       return; // Do nothing if event already handled
@@ -78,16 +78,16 @@ function readValue() {
   }*/
   
   //if (gamepadIndexes.length > 0) {
-    if ("keydown") {
+    /*if ("keydown") {
       window.requestAnimationFrame(readValue);
   }
-}
+}*/
 
 window.addEventListener("DOMContentLoaded", function(e) {
   //console.log("Gamepad connected!");
   //gamepads[e.gamepad.index] = true;
   generateRandomActive();
-  readValue();
+  //readValue();
 });
 
 /*window.addEventListener("gamepaddisconnected", function(e) {
