@@ -30,19 +30,19 @@ function buttonPressed(id) {
   window.addEventListener("keydown", function(event) {
     if (event.code == "KeyZ") {
       buttonPressed(2);
-      window.requestAnimationFrame(readValue);
+      //window.requestAnimationFrame(readValue);
     }
     if (event.code == "KeyX") {
       buttonPressed(3);
-      window.requestAnimationFrame(readValue);
+      //window.requestAnimationFrame(readValue);
     }
     if (event.code == "KeyM") {
       buttonPressed(0);
-      window.requestAnimationFrame(readValue);
+      //window.requestAnimationFrame(readValue);
     }
     if (event.code == "Comma") {
       buttonPressed(1);
-      window.requestAnimationFrame(readValue);
+      //window.requestAnimationFrame(readValue);
     }
   });
   /*const connectedGamepads = navigator.getGamepads();
