@@ -59,7 +59,7 @@ function onPlayerStateChange(event) {
   }
 }*/
 
-windows.onload = function() {
+window.onload = function() {
   let video = prompt('Введите ссылку на YouTube клип');
   document.querySelector('#video').innerHTML = '<iframe width="100%" height="100%" src="'+ video +'?autoplay=1&modestbranding=1&iv_load_policy=3&controls=0&disablekb=1&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>';
   generateRandomActive();
