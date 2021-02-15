@@ -40,6 +40,7 @@ function buttonPressed(id) {
     if (event.code == "Comma") {
       buttonPressed(1);
     }
+      window.requestAnimationFrame(readValue);
   });
   /*const connectedGamepads = navigator.getGamepads();
   const gamepadIndexes = Object.keys(gamepads);
