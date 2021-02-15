@@ -27,7 +27,40 @@ function buttonPressed(id) {
 }
 
 function readValue() {
-  const connectedGamepads = navigator.getGamepads();
+  window.addEventListener("keydown", function(event) {
+    if (event.defaultPrevented) {
+      return; // Do nothing if event already handled
+    }
+  
+    switch(event.code) {
+      case "KeyZ":
+      case "PressZ":
+        // Handle "back"
+        buttonPressed('KeyZ');
+        break;
+      case "KeyX":
+      case "PressX":
+        // Handle "forward"
+        buttonPressed('KeyX');
+        break;
+      case "KeyM":
+      case "PressM":
+        // Handle "turn left"
+        buttonPressed('KeyM');
+        break;
+      case "Comma":
+      case "Press<":
+        // Handle "turn right"
+        buttonPressed('Comma');
+        break;
+    }
+  
+    refresh();
+  
+    // Consume the event so it doesn't get handled twice
+    event.preventDefault();
+  }, true);
+  /*const connectedGamepads = navigator.getGamepads();
   const gamepadIndexes = Object.keys(gamepads);
   
   for (let x = 0; x < gamepadIndexes.length; x++) {
@@ -42,9 +75,9 @@ function readValue() {
         delete buttonState[y];
       }
     }
-  }
+  }*/
   
-  if (gamepadIndexes.length > 0) {
+  if ("keydown") {
     window.requestAnimationFrame(readValue);
   }
 }
