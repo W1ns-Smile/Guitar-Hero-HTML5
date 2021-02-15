@@ -1,5 +1,5 @@
-const gamepads = {};
-const buttonState = {};
+//const gamepads = {};
+//const buttonState = {};
 let active = 0;
 let points = 0;
 let streak = 0;
@@ -27,7 +27,7 @@ function buttonPressed(id) {
 }
 
 function readValue() {
-  /*window.addEventListener("keydown", function(event) {
+  window.addEventListener("keydown", function(event) {
     if (event.defaultPrevented) {
       return; // Do nothing if event already handled
     }
@@ -36,30 +36,30 @@ function readValue() {
       case "KeyZ":
       case "PressZ":
         // Handle "back"
-        buttonPressed('KeyZ');
+        buttonPressed(2);
         break;
       case "KeyX":
       case "PressX":
         // Handle "forward"
-        buttonPressed('KeyX');
+        buttonPressed(3);
         break;
       case "KeyM":
       case "PressM":
         // Handle "turn left"
-        buttonPressed('KeyM');
+        buttonPressed(0);
         break;
       case "Comma":
       case "Press<":
         // Handle "turn right"
-        buttonPressed('Comma');
+        buttonPressed(1);
         break;
     }
   
     refresh();
 
     event.preventDefault();
-  }, true);*/
-  const connectedGamepads = navigator.getGamepads();
+  }, true);
+  /*const connectedGamepads = navigator.getGamepads();
   const gamepadIndexes = Object.keys(gamepads);
   
   for (let x = 0; x < gamepadIndexes.length; x++) {
@@ -75,14 +75,14 @@ function readValue() {
         delete buttonState[y];
       }
     }
-  }
+  }*/
   
   if (gamepadIndexes.length > 0) {
     window.requestAnimationFrame(readValue);
   }
 }
 
-window.addEventListener("gamepadconnected", function(e) {
+/*window.addEventListener("gamepadconnected", function(e) {
   console.log("Gamepad connected!");
   gamepads[e.gamepad.index] = true;
   generateRandomActive();
@@ -92,4 +92,4 @@ window.addEventListener("gamepadconnected", function(e) {
 window.addEventListener("gamepaddisconnected", function(e) {
   console.log("Gamepad disconnected!");
   delete gamepads[e.gamepad.index];
-});
+});*/
