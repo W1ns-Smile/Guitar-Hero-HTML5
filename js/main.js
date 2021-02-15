@@ -55,7 +55,7 @@ function buttonPressed(id) {
         break;
     }
   
-    refresh();
+    //refresh();
 
     event.preventDefault();
   }, true);
