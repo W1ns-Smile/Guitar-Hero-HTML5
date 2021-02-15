@@ -69,6 +69,7 @@ function readValue() {
         if (!buttonState[y]) {
           buttonState[y] = true;
           buttonPressed(y);
+          console.log(y);
         }
       } else {
         delete buttonState[y];
