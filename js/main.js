@@ -77,8 +77,9 @@ function readValue() {
     }
   }*/
   
-  if (gamepadIndexes.length > 0) {
-    window.requestAnimationFrame(readValue);
+  //if (gamepadIndexes.length > 0) {
+    if ("keydown") {
+      window.requestAnimationFrame(readValue);
   }
 }
 
