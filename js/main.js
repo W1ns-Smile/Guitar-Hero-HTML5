@@ -28,37 +28,19 @@ function buttonPressed(id) {
 
 //function readValue() {
   window.addEventListener("keydown", function(event) {
-    if (event.defaultPrevented) {
-      return; // Do nothing if event already handled
+    if (event.code == "KeyZ") {
+      buttonPressed(2);
     }
-  
-    switch(event.code) {
-      case "KeyZ":
-      case "PressZ":
-        // Handle "back"
-        buttonPressed(2);
-        break;
-      case "KeyX":
-      case "PressX":
-        // Handle "forward"
-        buttonPressed(3);
-        break;
-      case "KeyM":
-      case "PressM":
-        // Handle "turn left"
-        buttonPressed(0);
-        break;
-      case "Comma":
-      case "Press<":
-        // Handle "turn right"
-        buttonPressed(1);
-        break;
+    if (event.code == "KeyX") {
+      buttonPressed(3);
     }
-  
-    //refresh();
-
-    event.preventDefault();
-  }, true);
+    if (event.code == "KeyM") {
+      buttonPressed(0);
+    }
+    if (event.code == "Comma") {
+      buttonPressed(1);
+    }
+  });
   /*const connectedGamepads = navigator.getGamepads();
   const gamepadIndexes = Object.keys(gamepads);
   
